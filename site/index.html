@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f8fc">
+    <meta name="description" content="Uma jornada gamificada para estudar para o ENEM com trilhas, questões e metas diárias.">
+    <title>Passo — sua jornada ENEM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegação principal">
+        <a class="brand" href="#" aria-label="Passo, início">
+          <span class="brand-mark" aria-hidden="true">p</span>
+          <span>passo<span class="brand-dot">.</span></span>
+        </a>
+
+        <p class="nav-caption">SEU ESPAÇO</p>
+        <nav class="main-nav">
+          <a class="nav-link active" href="#inicio"><span class="nav-icon" aria-hidden="true">⌂</span>Início</a>
+          <a class="nav-link" href="#trilha"><span class="nav-icon" aria-hidden="true">✳</span>Minha trilha</a>
+          <a class="nav-link" href="#questoes"><span class="nav-icon" aria-hidden="true">▤</span>Questões</a>
+          <a class="nav-link" href="#desempenho"><span class="nav-icon" aria-hidden="true">↗</span>Meu desempenho</a>
+        </nav>
+
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-note">
+          <span class="note-spark" aria-hidden="true">✦</span>
+          <p>Um passo de cada vez.<br><strong>Você chega lá.</strong></p>
+          <span class="note-doodle" aria-hidden="true">↗</span>
+        </div>
+        <button class="profile-button" type="button" aria-label="Perfil de estudante">
+          <span class="avatar">E</span>
+          <span class="profile-copy"><strong>Estudante</strong><small>Minha conta</small></span>
+          <span class="profile-more" aria-hidden="true">···</span>
+        </button>
+      </aside>
+
+      <main class="main-content" id="inicio">
+        <header class="topbar">
+          <div class="mobile-brand"><span class="brand-mark" aria-hidden="true">p</span>passo<span class="brand-dot">.</span></div>
+          <div class="breadcrumb"><span>Minha jornada</span><span class="breadcrumb-slash">/</span><strong>Início</strong></div>
+          <div class="topbar-actions">
+            <div class="streak-pill" aria-label="Sequência de 7 dias"><span aria-hidden="true">🔥</span><strong>7</strong><span>dias</span></div>
+            <button class="icon-button notification-button" type="button" aria-label="Notificações">♧<span class="notification-dot"></span></button>
+            <span class="avatar top-avatar" aria-hidden="true">E</span>
+          </div>
+        </header>
+
+        <div class="dashboard">
+          <section class="welcome-row">
+            <div>
+              <p class="eyebrow">SEGUNDA-FEIRA, 16 DE NOVEMBRO</p>
+              <h1>Oi, estudante! <span class="wave" aria-hidden="true">✦</span></h1>
+              <p class="welcome-subtitle">Bora conquistar mais um passo hoje?</p>
+            </div>
+            <div class="xp-pill"><span class="xp-star" aria-hidden="true">✦</span><span><strong id="xp-total">240</strong> XP</span></div>
+          </section>
+
+          <section class="hero-card" aria-labelledby="hero-title">
+            <div class="hero-copy">
+              <span class="hero-label"><span class="live-dot"></span> SUA JORNADA ESTÁ ROLANDO</span>
+              <h2 id="hero-title">Seu futuro<br>começa no <span>próximo passo.</span></h2>
+              <p>Continue de onde parou e avance no seu ritmo. Cada minuto conta!</p>
+              <button class="button button-dark" id="continue-button" type="button">Continuar estudando <span aria-hidden="true">↗</span></button>
+              <div class="hero-progress">
+                <div class="hero-progress-label"><span>Progresso da trilha</span><strong id="overall-progress">12%</strong></div>
+                <div class="progress-track"><span id="overall-progress-bar" style="width: 12%"></span></div>
+              </div>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="art-sun"></div>
+              <div class="art-orbit orbit-one"></div>
+              <div class="art-orbit orbit-two"></div>
+              <div class="art-star star-one">✦</div>
+              <div class="art-star star-two">✳</div>
+              <div class="art-book"><span></span><span></span><span></span><b>+</b></div>
+              <div class="art-squiggle">〰</div>
+            </div>
+            <span class="hero-confetti confetti-one" aria-hidden="true">✳</span>
+            <span class="hero-confetti confetti-two" aria-hidden="true">·</span>
+          </section>
+
+          <div class="content-grid">
+            <section class="path-section card" id="trilha" aria-labelledby="path-title">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">SEU PRÓXIMO PASSO</p>
+                  <h2 id="path-title">Trilha de hoje <span class="heading-emoji" aria-hidden="true">🧭</span></h2>
+                </div>
+                <button class="text-button" type="button" data-open-lesson="math">Ver trilha <span aria-hidden="true">→</span></button>
+              </div>
+
+              <div class="path-map">
+                <div class="path-line" aria-hidden="true"><span></span></div>
+                <button class="path-step step-done" type="button" data-open-lesson="reading" aria-label="Revisar interpretação de texto, concluído">
+                  <span class="step-node"><span aria-hidden="true">✓</span></span>
+                  <span class="step-copy"><span class="step-meta">LINGUAGENS <span class="step-status">CONCLUÍDO</span></span><strong>Interpretação de texto</strong><small>Leitura e compreensão · 8 min</small></span>
+                  <span class="step-points">+20 <span>XP</span></span>
+                </button>
+                <button class="path-step step-current" type="button" data-open-lesson="math" aria-label="Continuar matemática, em andamento">
+                  <span class="step-node"><span aria-hidden="true">✦</span></span>
+                  <span class="step-copy"><span class="step-meta">MATEMÁTICA <span class="step-status">EM ANDAMENTO</span></span><strong>Porcentagem no dia a dia</strong><small>Matemática básica · 12 min</small></span>
+                  <span class="step-arrow" aria-hidden="true">→</span>
+                </button>
+                <button class="path-step step-locked" type="button" data-open-lesson="nature" aria-label="Abrir ciências da natureza">
+                  <span class="step-node"><span aria-hidden="true">⚗</span></span>
+                  <span class="step-copy"><span class="step-meta">CIÊNCIAS DA NATUREZA</span><strong>Energia e sustentabilidade</strong><small>Física · 10 min</small></span>
+                  <span class="step-lock" aria-hidden="true">⌑</span>
+                </button>
+                <button class="path-step step-locked" type="button" data-open-lesson="writing" aria-label="Abrir redação">
+                  <span class="step-node"><span aria-hidden="true">✎</span></span>
+                  <span class="step-copy"><span class="step-meta">REDAÇÃO</span><strong>Construindo argumentos</strong><small>Estratégia de escrita · 15 min</small></span>
+                  <span class="step-lock" aria-hidden="true">⌑</span>
+                </button>
+              </div>
+              <div class="path-footer"><span class="footer-check" aria-hidden="true">✓</span> <span>Uma trilha completa, um sonho mais perto.</span><span class="footer-spark" aria-hidden="true">✦</span></div>
+            </section>
+
+            <div class="right-column">
+              <section class="mission-card card" aria-labelledby="mission-title">
+                <div class="mission-topline"><span class="mission-icon" aria-hidden="true">◉</span><span class="eyebrow">MISSÃO DA SEMANA</span><span class="mission-badge">+80 XP</span></div>
+                <h2 id="mission-title">Aquecimento<br>da aprovação</h2>
+                <p>Complete 4 atividades até domingo e ganhe uma dose extra de XP.</p>
+                <div class="mission-progress-label"><span id="mission-count">2 de 4 atividades</span><strong id="mission-percent">50%</strong></div>
+                <div class="mission-track"><span id="mission-progress-bar" style="width: 50%"></span></div>
+                <div class="mission-reward"><span aria-hidden="true">🏆</span><span>Recompensa: <strong>baú surpresa</strong></span></div>
+              </section>
+
+              <section class="focus-card card" id="questoes" aria-labelledby="focus-title">
+                <div class="focus-heading">
+                  <span class="focus-icon" aria-hidden="true">✳</span>
+                  <div><p class="eyebrow">QUESTÃO DO DIA</p><h2 id="focus-title">Desafio relâmpago</h2></div>
+                </div>
+                <p class="focus-description">Temas que aparecem muito nas provas do ENEM, em uma questão rapidinha.</p>
+                <div class="focus-tags"><span>MATEMÁTICA</span><span>2 MIN</span></div>
+                <button class="button button-lime" id="question-button" type="button">Partiu desafio <span aria-hidden="true">↗</span></button>
+              </section>
+            </div>
+          </div>
+
+          <section class="bottom-row" id="desempenho" aria-label="Resumo do seu progresso">
+            <div class="bottom-message"><span class="message-icon" aria-hidden="true">✦</span><span><strong>Consistência vale mais que pressa.</strong><small>Você já estudou 3 dias esta semana. Continue assim!</small></span></div>
+            <div class="bottom-stat"><span class="stat-icon purple" aria-hidden="true">▤</span><span><small>QUESTÕES FEITAS</small><strong>18 <em>esta semana</em></strong></span></div>
+            <div class="bottom-stat"><span class="stat-icon orange" aria-hidden="true">◷</span><span><small>TEMPO DE ESTUDO</small><strong>2h 40 <em>esta semana</em></strong></span></div>
+          </section>
+          <footer class="page-footer"><span>Feito para avançar no seu ritmo.</span><span>ENEM 2026 <span class="footer-dot">•</span> <a href="#inicio">Voltar ao topo ↑</a></span></footer>
+        </div>
+      </main>
+    </div>
+
+    <dialog class="lesson-dialog" id="lesson-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-content">
+        <button class="dialog-close" type="button" aria-label="Fechar">×</button>
+        <p class="eyebrow dialog-eyebrow" id="dialog-category">MATEMÁTICA · QUESTÃO INSPIRADA NO ENEM</p>
+        <div class="dialog-icon" aria-hidden="true">✦</div>
+        <h2 id="dialog-title">Vamos praticar?</h2>
+        <p class="dialog-question" id="dialog-question"></p>
+        <div class="answer-list" id="answer-list"></div>
+        <p class="answer-feedback" id="answer-feedback" aria-live="polite"></p>
+        <button class="button button-dark dialog-next" id="dialog-next" type="button" hidden>Concluir atividade <span aria-hidden="true">→</span></button>
+      </div>
+    </dialog>
+  </body>
+</html>
